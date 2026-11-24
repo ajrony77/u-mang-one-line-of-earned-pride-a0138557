@@ -10,8 +10,9 @@ const LINE =
   "Three ruined batches behind him, the apprentice pulled his loaf from the oven — and the old baker tasted it, nodded, and set it in the window.";
 
 // The gate allows 1 to 240 characters; refuse to write anything else.
-if (LINE.length < 1 || LINE.length > 240 || LINE.trim().length === 0) {
-  throw new Error(`entry line is ${LINE.length} characters, outside the 1-240 gate`);
+const CAP = 240;
+if (LINE.length < 1 || LINE.length > CAP || LINE.trim().length === 0) {
+  throw new Error(`entry line is ${LINE.length} characters, must be 1-${CAP}`);
 }
 
 mkdirSync("/output", { recursive: true });
