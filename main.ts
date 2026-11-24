@@ -7,6 +7,8 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
 const LINE =
+  // 142 characters, inside the 1-240 gate; the em-dash is the only
+  // non-ASCII character, so the length is the same in UTF-8 and UTF-16.
   "Three ruined batches behind him, the apprentice pulled his loaf from the oven — and the old baker tasted it, nodded, and set it in the window.";
 
 // The gate allows 1 to 240 characters; refuse to write anything else.
